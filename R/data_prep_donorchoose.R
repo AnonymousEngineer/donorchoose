@@ -17,7 +17,13 @@ library('ggplot2') # plotting
 library('dplyr') #datase manipulation
 
 train <- read.csv(file="../data/train.csv", header=TRUE, sep=",", na.strings=c("","NA")) #read CSV
-str(train)  #take a quick look at the data types in the different columns 
+str(train)  #take a quick look at the data types in the different columns
+train$type <- train 
+
+test <- read.csv(file="../data/test.csv", header=TRUE, sep=",", na.strings=c("","NA")) #read CSV
+str(test)  #take a quick look at the data types in the different columns 
+
+
 
 cols <- tolower(colnames(train))  #change column names to lowercase and store
 colnames(train) <- cols   #store the lowercase column names
